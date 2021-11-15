@@ -4,6 +4,8 @@ setup(
     name='simplePyQt5',
     version='0.0.1',
     author='yjg30737',
+    author_email='yjg30737@gmail.com',
+    license='BSD',
     packages=['simplePyQt5'],
     description='My First PyQt in GitHub, Maybe someone see this..?',
     url='https://github.com/yjg30737/simplePyQt5.git',
