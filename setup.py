@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='simplePyQt5',
-    version='0.0.1',
+    version='0.0.2',
     author='yjg30737',
     author_email='yjg30737@gmail.com',
     license='BSD',
