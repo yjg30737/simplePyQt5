@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QWidget, QFrame, QGridLayout, QHBoxLayout
 from PyQt5.QtCore import Qt
 
 
-class GeneralHorizontalWidget(QWidget):
+class HorizontalWidget(QWidget):
     def __init__(self, parent=None):
         super().__init__()
         self._initUi(parent=parent)
@@ -12,9 +12,9 @@ class GeneralHorizontalWidget(QWidget):
         self._hboxLayout.setContentsMargins(0, 0, 0, 0)
         self.setLayout(self._hboxLayout)
 
-    def add_widget(self, widget, align=Qt.AlignLeft):
+    def addWidget(self, widget, align=Qt.AlignLeft):
         self._hboxLayout.addWidget(widget)
-        self._set_attr_of_layout(align=align)
+        self._setAttrOfLayout(align=align)
 
     def addSeparator(self, base_style=QFrame.Sunken, css_style='', width=1):
         line = QFrame()
@@ -29,16 +29,16 @@ class GeneralHorizontalWidget(QWidget):
             css_style = 'border: 1px solid #DDD;'
         line.setStyleSheet(css_style)
 
-    def add_widgets(self, widgets: list, align=Qt.AlignLeft, separator_css_style=''):
+    def addWidgets(self, widgets: list, align=Qt.AlignLeft, separator_css_style=''):
         for widget in widgets:
             if widget:
-                self.add_widget(widget, align=align)
+                self.addWidget(widget, align=align)
             else:
                 self.addSeparator(css_style=separator_css_style)
 
-    def insert_widget(self, widget, idx=0, align=Qt.AlignLeft):
+    def insertWidget(self, widget, idx=0, align=Qt.AlignLeft):
         self._hboxLayout.insertWidget(idx, widget)
-        self._set_attr_of_layout(align=align)
+        self._setAttrOfLayout(align=align)
 
     def insertSeparator(self, idx, base_style=QFrame.Sunken, css_style='', width=1):
         line = QFrame()
@@ -53,14 +53,14 @@ class GeneralHorizontalWidget(QWidget):
             css_style = 'border: 1px solid #DDD;'
         line.setStyleSheet(css_style)
 
-    def insert_widgets(self, widgets: list, idx=0, align=Qt.AlignLeft, separator_css_style=''):
+    def insertWidgets(self, widgets: list, idx=0, align=Qt.AlignLeft, separator_css_style=''):
         for widget in widgets:
             if widget:
-                self.insert_widget(widget, idx=idx, align=align)
+                self.insertWidget(widget, idx=idx, align=align)
             else:
                 self.insertSeparator(idx=idx, css_style=separator_css_style)
 
-    def _set_attr_of_layout(self, align):
+    def _setAttrOfLayout(self, align):
         if self.layout():
             self.layout().setAlignment(align)
             self.layout().setContentsMargins(0, 0, 0, 0)
