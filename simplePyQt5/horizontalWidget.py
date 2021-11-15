@@ -64,11 +64,3 @@ class HorizontalWidget(QWidget):
         if self.layout():
             self.layout().setAlignment(align)
             self.layout().setContentsMargins(0, 0, 0, 0)
-
-    def setReasonableMaximumHeight(self):
-        max_height = max([self.layout().itemAt(i).widget().sizeHint().height() for i in range(self.layout().count())])
-        for i in range(self.layout().count()):
-            self.layout().itemAt(i).widget().setMinimumHeight(max_height)
-
-    def setStyleSheet(self, styleSheet: str) -> None:
-        super().setStyleSheet(styleSheet)
