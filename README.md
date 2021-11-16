@@ -10,8 +10,8 @@
 Being able to add a couple of Qt widgets and separator at once, align them easily, no need to make layout.
 This package can come in handy to someone who want to make prototype UI quick.
 
-## Technologies
-* PyQt5 version 5.15.6
+## Requirements
+* PyQt5
 
 ## Setup
 ```
@@ -39,8 +39,8 @@ Unlike QFormLayout which only can set QLabel to the one side, You can add a bunc
     from simplePyQt5.horizontalWidget import HorizontalWidget
     ...
     horizontalWidget = HorizontalWidget()
-    btn1 = QPushButton()
-    btns = QPushButton()
+    btn1 = QPushButton('btn1')
+    btn2 = QPushButton('btn2')
     # Add two buttons horizontally, "''" between to buttons is separator, align parameter make widgets align
     horizontalWidget.addWidgets([btn1, '', btn2], align=Qt.AlignCenter)
 ```
