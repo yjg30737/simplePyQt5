@@ -20,10 +20,15 @@ Keep in mind that PyQt5 version 5.15.6 will be automatically downloaded.
 
 ## Class Overview
 * HorizontalWidget
+
 Add widgets and separators horizontally.
+
 * VerticalWidget
+
 Add widgets and separators vertically.
+
 * LeftRightWidget
+
 Add some widgets left side of the widget and add the others right side.
 Unlike QFormLayout which only can set QLabel to the one side, You can add a bunch of other stuffs like QComboBox, QCheckBox.
 
