@@ -8,7 +8,7 @@
 
 ## General Info
 Being able to add a couple of Qt widgets and separator at once, align them easily, no need to make layout.
-This package can come in handy to someone who want to make some prototype UI quick.
+This package can come in handy to someone who want to make prototype UI quick.
 
 ## Technologies
 * PyQt5 version 5.15.6
