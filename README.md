@@ -67,6 +67,11 @@ Result
     ...
     lrWidget = LeftRightWidget()
     lineEdit = QLineEdit()
+    lineEdit.setFixedWidth(80) # Prevent width of lineEdit grow endlessly to show this modules feature
     btn = QPushButton()
     lrWidget.setLeftWidgets([lineEdit]) # Add lineEdit left side of the lrWidget
     lrWidget.setRightWidgets([btn]) # Add btn right side of the lrWidget
+```
+Result
+
+![LeftRightWidget](./examples/leftRightWidgetExample.png)
