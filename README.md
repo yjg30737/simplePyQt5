@@ -105,7 +105,7 @@ Result
 
 * Other
 
-These classes' content margins are set to zero, so if you want to set the margin then
+These classes' content margins are set to zero as default, so if you want to set the margin then
 ```python
     lrWidget = LeftRightWidget()
     lay = lrWidget.layout()
