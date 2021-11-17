@@ -35,6 +35,8 @@ Unlike QFormLayout which only can set QLabel to the one side, You can add a bunc
 
 ## Usage
 * HorizontalWidget
+
+Code
 ```python
     from simplePyQt5.horizontalWidget import HorizontalWidget
     ...
@@ -44,9 +46,19 @@ Unlike QFormLayout which only can set QLabel to the one side, You can add a bunc
     # Add two buttons horizontally, "''" between to buttons is separator, align parameter make widgets align
     horizontalWidget.addWidgets([btn1, '', btn2], align=Qt.AlignCenter)
 ```
+Result
+
+![HorizontalWidget](./examples/horizontalWidgetExample.png)
+
 * VerticalWidget
 
-Same as HorizontalWidget.
+Code
+
+Same as HorizontalWidget. Only difference is name.
+
+Result
+
+![VerticalWidget](./examples/verticalWidgetExample.png)
 
 * LeftRightWidget
 ```python
