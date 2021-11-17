@@ -10,6 +10,6 @@ setup(
     description='Make things with PyQt5 easier',
     url='https://github.com/yjg30737/simplePyQt5.git',
     install_requires=[
-        'PyQt5==5.15.6'
+        'PyQt5>=5.8'
     ]
 )
