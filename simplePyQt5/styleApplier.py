@@ -36,7 +36,7 @@ class StyleApplier:
 
     def setIconAutomatically(self, token: list, widgets: list):
         for i in range(len(widgets)):
-            widgets[i].setIcon(QIcon(self.__icon_path + token[i] + '.png'))
+            widgets[i].setIcon(QIcon(self.__icon_path + token[i]))
 
     def setToolTip(self, texts: list, widgets: list):
         for i in range(len(widgets)):
