@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QFrame
-from leftRightWidget import LeftRightWidget
+from simplePyQt5.leftRightWidget import LeftRightWidget
 
 
 class TopLeftRightWidget(LeftRightWidget):
