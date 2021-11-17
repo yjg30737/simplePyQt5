@@ -6,12 +6,12 @@ from PyQt5.QtGui import QIcon
 class StyleApplier:
 
     def __init__(self):
-        self.__icon_path = 'iconPath'
-        self.__style_path = 'stylePath'
+        self.__icon_path = 'ico'
+        self.__style_path = 'style'
 
     def setCssFile(self, css_file, widgets: list):
         try:
-            css_file = open(css_file)
+            css_file = open(os.path.join(self.__style_path, css_file))
             css_code = css_file.read()
             css_file.close()
             self.setCssCode(css_code, widgets)
@@ -36,7 +36,7 @@ class StyleApplier:
 
     def setIconAutomatically(self, token: list, widgets: list):
         for i in range(len(widgets)):
-            widgets[i].setIcon(QIcon(self.__icon_path + token[i]))
+            widgets[i].setIcon(QIcon(os.path.join(self.__icon_path, token[i])))
 
     def setToolTip(self, texts: list, widgets: list):
         for i in range(len(widgets)):
