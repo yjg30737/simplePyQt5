@@ -31,7 +31,12 @@ Unlike QFormLayout which only can set QLabel to the one side, You can add a bunc
 * TopLeftRightWidget
 
 This module inherits LeftRightWidget.
-Top of this widget is LeftRightWidget and bottom part of this you can add/set a bunch of widgets such as QListWidget or separators. 
+Top of this widget is LeftRightWidget and bottom part of this you can add/set a bunch of widgets such as QListWidget or separators.
+
+* StyleApplier
+
+This module help you apply style, icon, tooltip over widgets. Style path and icon path are set to `style` and `icon` folder in your script folder by default. So if you want to use this module you have to make those two and put the css files and icon files inside them.
+You can change those two paths, though.
 
 ## Setup
 ```
@@ -97,11 +102,46 @@ Code
     tlrWidget.setLeftWidgets([lbl])
     tlrWidget.setRightWidgets([addBtn, delBtn])
     tlrWidget.addBottomWidget(listWidget)
-    self.setCentralWidget(tlrWidget)
 ```
 Result
 
 ![TopLeftRightWidget](./examples/topLeftRightWidgetExample.png)
+
+* StyleApplier
+
+Using TopLeftRightWidget as showing StyleApplier's feature.
+
+Code
+```python
+    from simplePyQt5.styleApplier import StyleApplier
+    ...
+    tlrWidget = TopLeftRightWidget()
+    lbl = QLabel('Files')
+    addBtn = QPushButton()
+    delBtn = QPushButton()
+
+    btns = [addBtn, delBtn]
+    applier = StyleApplier()
+    applier.setCssFile('style1.css', btns) # apply css file to btns list 
+    applier.setIconAutomatically(['add.png', 'delete.png'], btns) # apply icon files to btns list
+    applier.setToolTip(['Add', 'Delete'], btns) # apply tooltips to btns list
+
+    listWidget = QListWidget()
+    tlrWidget.setLeftWidgets([lbl])
+    tlrWidget.setRightWidgets([addBtn, delBtn])
+    tlrWidget.addBottomWidget(listWidget)
+```
+Result
+
+![StyleApplier](./examples/styleApplierExample.png)
+
+Again, Style path and icon path are set to `style` and `icon` folder in your script folder by default. So if you want to use this module you have to make those two and put the css files and icon files inside them.
+
+You can change those two default paths with `setStylePath` and `setIconPath` method.
+
+If you want to apply css code itself over widgets instead of file, use `setCssCode` method.
+
+If you want to adjust widgets' size to icons' size naturally, use `setHintSize` method.
 
 * Other
 
