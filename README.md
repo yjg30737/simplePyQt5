@@ -15,6 +15,7 @@ This package can come in handy to someone who want to make prototype UI quick.
 
 ## Setup
 ```
+$ pip install pyqt5 # if pyqt5 is not installed in your package library
 $ pip install git+https://github.com/yjg30737/simplePyQt5.git
 ```
 Keep in mind that PyQt5 version 5.15.6 will be automatically downloaded.
