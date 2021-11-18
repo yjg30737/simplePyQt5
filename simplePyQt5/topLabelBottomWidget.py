@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import QWidget, QLabel
 from PyQt5.QtCore import Qt
 
-from verticalWidget import VerticalWidget
-from topLeftRightWidget import TopLeftRightWidget
+from simplePyQt5.verticalWidget import VerticalWidget
+from simplePyQt5.topLeftRightWidget import TopLeftRightWidget
 
 
 class TopLabelBottomWidget(QWidget):
