@@ -10,6 +10,7 @@
 ## General Info
 Being able to add a couple of Qt widgets and separator at once, align them easily, no need to make layout.
 This package can come in handy to someone who want to make prototype UI quick.
+I used it all the times when i was new at PyQt5.
 
 ## Requirements
 * PyQt5
@@ -36,7 +37,11 @@ Top of this widget is LeftRightWidget and bottom part of this you can add/set a 
 * TopLabelBottomWidget
 
 If you want to add the label on the top of the TopLeftRightWidget, This is for you.
-Using `setLabel(text: str)` method to set the label. 
+Using `setLabel(text: str)` method to set the label.
+
+* OkCancelWidget
+
+Add Ok, Cancel buttons to bottom right of certain dialog. Attach to parent widget like `OkCancelWidget(self)` and then add to parent widget's layout like `lay.addWidget(okCancelWidget)` then ok, cancel buttons will show up bottom right part of the widget.
 
 * StyleApplier
 
@@ -198,6 +203,29 @@ if __name__ == "__main__":
 Result
 
 ![TopLabelBottomWidget](./examples/topLabelBottomWidgetExample.png)
+
+* OkCancelWidget
+
+Code
+```python
+        listWidget = QListWidget()
+        mainWidget.setLeftWidgets([allChkBox])
+        mainWidget.setRightWidgets([addBtn, delBtn])
+        mainWidget.addBottomWidget(listWidget)
+        
+        okCancelWidget = OkCancelWidget(self) # make OkCancelWidget instance
+        mainWidget.addBottomWidget(okCancelWidget) # attach
+        
+        lay = mainWidget.layout()
+        lay.setContentsMargins(5, 5, 5, 5)
+        self.setCentralWidget(mainWidget)
+```
+Result
+
+![OkCancelWidget](./examples/okCancelWidgetExample.png)
+
+Well, it will be quite different than the others. Because i write `lay.setContentMargins(5, 5, 5, 5)` so it looks less ugly.
+I kinda regret that i didn't set the contents margins to other examples. Whatever.
 
 * Other
 
