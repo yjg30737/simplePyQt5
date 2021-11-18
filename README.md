@@ -245,10 +245,10 @@ addBtn.clicked.connect(self.__add) # Show InsertDialog when addBtn clicked
 delBtn = QPushButton()
 ...
 def __add(self):
-    dialog = InsertDialog()
+    dialog = InsertDialog() # make instance
     reply = dialog.exec()
-    if reply == QDialog.Accepted:
-        print(dialog.getText())
+    if reply == QDialog.Accepted: # if user clicked ok button in InsertDialog 
+        print(dialog.getText()) # get the text
 
 ```
 Result
