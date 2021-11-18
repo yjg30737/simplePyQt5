@@ -9,13 +9,13 @@ class InsertDialog(QDialog):
         self.__initUi()
 
     def __initUi(self):
-        self.setWindowTitle('입력')
+        self.setWindowTitle('Insert text')
         self.setWindowFlags(Qt.WindowCloseButtonHint)
 
         self.__wordLineEdit = QLineEdit()
         self.__wordLineEdit.textChanged.connect(self.__wordLineEditTextChanged)
 
-        self.__okBtn = QPushButton('확인')
+        self.__okBtn = QPushButton('OK')
         self.__okBtn.clicked.connect(self.accept)
 
         lay = QHBoxLayout()
