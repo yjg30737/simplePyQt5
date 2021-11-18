@@ -41,7 +41,13 @@ Using `setLabel(text: str)` method to set the label.
 
 * OkCancelWidget
 
-Add Ok, Cancel buttons to bottom right of certain dialog. Attach to parent widget like `OkCancelWidget(self)` and then add to parent widget's layout like `lay.addWidget(okCancelWidget)` then ok, cancel buttons will show up bottom right part of the widget.
+Add Ok, Cancel buttons to bottom right of certain QDialog. Attach to parent widget like `OkCancelWidget(self)` and then add to parent widget's layout like `lay.addWidget(okCancelWidget)` then ok, cancel buttons will show up bottom right part of the widget.
+
+※ This only works in QDialog!
+
+* InsertDialog
+
+Basic dialog to insert the text. It contains QLineEdit, QPushButton. if user insert the text in QLineEdit, QPushButton will be enabled to click. If QLineEdit is empty, QPushButton will be disabled.
 
 * StyleApplier
 
@@ -206,6 +212,8 @@ Result
 
 * OkCancelWidget
 
+Add OkCancelWidget to TopLabelBottomWidget example code.
+
 Code
 ```python
         listWidget = QListWidget()
@@ -226,6 +234,26 @@ Result
 
 Well, You might think result image looks quite different than the others. Because i write `lay.setContentMargins(5, 5, 5, 5)` to make it less ugly.
 I kinda regret that i didn't set the contents margins to other examples. Whatever.
+
+* InsertDialog
+
+Code
+```python
+
+addBtn = QPushButton()
+addBtn.clicked.connect(self.__add) # Show InsertDialog when addBtn clicked
+delBtn = QPushButton()
+...
+def __add(self):
+    dialog = InsertDialog()
+    reply = dialog.exec()
+    if reply == QDialog.Accepted:
+        print(dialog.getText())
+
+```
+Result
+
+![InsertDialog](./examples/insertDialog.png)
 
 * Other
 
