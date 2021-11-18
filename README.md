@@ -33,6 +33,11 @@ Unlike QFormLayout which only can set QLabel to the one side, You can add a bunc
 This module inherits LeftRightWidget.
 Top of this widget is LeftRightWidget and bottom part of this you can add/set a bunch of widgets such as QListWidget or separators.
 
+* TopLabelBottomWidget
+
+If you want to add the label on the top of the TopLeftRightWidget, This is for you.
+Using `setLabel(text: str)` method to set the label. 
+
 * StyleApplier
 
 This module help you apply style, icon, tooltip over widgets. Style path and icon path are set to `style` and `icon` folder in your script folder by default. So if you want to use this module you have to make those two and put the css files and icon files inside them.
@@ -142,6 +147,53 @@ You can change those two default paths with `setStylePath` and `setIconPath` met
 If you want to apply css code itself over widgets instead of file, use `setCssCode` method.
 
 If you want to adjust widgets' size to icons' size naturally, use `setHintSize` method.
+
+* TopLabelBottomWidget
+
+Code(Full)
+```python
+import sys
+
+from PyQt5.QtWidgets import QMainWindow, QPushButton, QApplication, QListWidget, QCheckBox
+from simplePyQt5 import StyleApplier
+from simplePyQt5.topLabelBottomWidget import TopLabelBottomWidget
+
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.__initUi()
+
+    def __initUi(self):
+        mainWidget = TopLabelBottomWidget()
+        mainWidget.setLabel('Files')
+
+        allChkBox = QCheckBox('Check All')
+
+        addBtn = QPushButton()
+        delBtn = QPushButton()
+
+        btns = [addBtn, delBtn]
+        applier = StyleApplier()
+        applier.setCssFile('style1.css', btns)
+        applier.setIconAutomatically(['add.png', 'delete.png'], btns)
+        applier.setToolTip(['Add', 'Delete'], btns)
+
+        listWidget = QListWidget()
+        mainWidget.setLeftWidgets([allChkBox])
+        mainWidget.setRightWidgets([addBtn, delBtn])
+        mainWidget.addBottomWidget(listWidget)
+        lay = mainWidget.layout()
+        lay.setContentsMargins(5, 5, 5, 5)
+        self.setCentralWidget(mainWidget)
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    mainWindow = MainWindow()
+    mainWindow.show()
+    sys.exit(app.exec_())
+```
 
 * Other
 
