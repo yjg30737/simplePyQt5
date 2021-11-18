@@ -195,6 +195,10 @@ if __name__ == "__main__":
     sys.exit(app.exec_())
 ```
 
+Result
+
+![TopLabelBottomWidget](./examples/topLabelBottomWidgetExample.png)
+
 * Other
 
 These classes' content margins are set to zero as default, so if you want to set the margin then
