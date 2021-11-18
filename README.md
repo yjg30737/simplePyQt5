@@ -224,7 +224,7 @@ Result
 
 ![OkCancelWidget](./examples/okCancelWidgetExample.png)
 
-Well, it will be quite different than the others. Because i write `lay.setContentMargins(5, 5, 5, 5)` so it looks less ugly.
+Well, You might think result image looks quite different than the others. Because i write `lay.setContentMargins(5, 5, 5, 5)` to make it less ugly.
 I kinda regret that i didn't set the contents margins to other examples. Whatever.
 
 * Other
