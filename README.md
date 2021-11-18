@@ -253,7 +253,7 @@ def __add(self):
 ```
 Result
 
-![InsertDialog](./examples/insertDialog.png)
+![InsertDialog](./examples/insertDialogExample.png)
 
 * Other
 
