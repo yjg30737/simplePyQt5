@@ -16,7 +16,7 @@ class TopLabelBottomWidget(QWidget):
         self.__lbl = QLabel('')
 
         mainWidget = VerticalWidget()
-        mainWidget.add_widgets([self.__lbl, self.__bottomWidget])
+        mainWidget.addWidgets([self.__lbl, self.__bottomWidget])
         lay = mainWidget.layout()
 
         self.setLayout(lay)
@@ -25,10 +25,10 @@ class TopLabelBottomWidget(QWidget):
         self.__lbl.setText(text)
 
     def setLeftWidgets(self, widgets: list, align=Qt.AlignVCenter):
-        self.__bottomWidget.set_left_widgets(widgets, align=align)
+        self.__bottomWidget.setLeftWidgets(widgets, align=align)
 
     def setRightWidgets(self, widgets: list, align=Qt.AlignVCenter):
-        self.__bottomWidget.set_right_widgets(widgets, align=align)
+        self.__bottomWidget.setRightWidgets(widgets, align=align)
 
     def addBottomWidget(self, widget):
-        self.__bottomWidget.add_bottom_widget(widget)
+        self.__bottomWidget.addBottomWidget(widget)
