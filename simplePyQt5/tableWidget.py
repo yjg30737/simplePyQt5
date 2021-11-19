@@ -42,9 +42,9 @@ class TableWidget(QTableWidget):
 
     def removeSelectedRows(self):
         indexes = self.selectedIndexes()
-        if indexes:
-            for i in range(len(indexes)-1, -1, -1):
-                self.removeRow(indexes[i].row())
+        row_lst = reversed(list(set([index.row() for index in indexes])))
+        for r in row_lst:
+            self.removeRow(r)
 
     def _insertItem(self, args: iter, r_idx=0, c_idx=0, align=Qt.AlignVCenter, ifExistsFunc=None, duplicated_enabled=False):
         if isinstance(args[0], QWidget):
@@ -129,12 +129,6 @@ class TableWidget(QTableWidget):
     def addData(self, datas: iter, align=Qt.AlignVCenter, ifExistsFunc=None, duplicated_enabled=False):
         # self.setColumnCount(max(self.columnCount(), len(datas))) set the count of column dynamically
         self._setItem(args=datas, align=align, ifExistsFunc=ifExistsFunc, duplicated_enabled=duplicated_enabled)
-
-    def addDatas(self, datas: iter, align=Qt.AlignVCenter, ifExistsFunc=None, duplicated_enabled=False, set_first_row_as_current=False):
-        for data in datas:
-            self.addData(data, align=align, ifExistsFunc=ifExistsFunc, duplicated_enabled=duplicated_enabled)
-        if set_first_row_as_current:
-            self.setCurrentIndex(self.model().index(0, 0))
 
     def cellWidget(self, row: int, column: int):
         widget = super().cellWidget(row, column)
