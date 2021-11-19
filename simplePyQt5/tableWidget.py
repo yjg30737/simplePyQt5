@@ -26,9 +26,6 @@ class TableWidget(QTableWidget):
         super().setHorizontalHeaderLabels(lst)
         self.horizontalHeader().setDefaultAlignment(Qt.AlignCenter)
 
-    def setCurIndex(self, r_idx, c_idx):
-        self.setCurrentIndex(self.model().index(r_idx, c_idx))
-
     def setVerticalHeaderLabels(self, lst, align=Qt.AlignCenter):
         self.verticalHeader().setVisible(True)
         self.__vertical_header = lst
