@@ -6,3 +6,4 @@ from .styleApplier import *
 from .topLabelBottomWidget import *
 from .okCancelWidget import *
 from .insertDialog import *
+from .tableWidget import *
