@@ -119,13 +119,6 @@ class TableWidget(QTableWidget):
     def insertData(self, datas: iter, r_idx=0, c_idx=0, align=Qt.AlignVCenter, ifExistsFunc=None, duplicated_enabled=False):
         self._insertItem(args=datas, r_idx=r_idx, c_idx=c_idx, align=align, ifExistsFunc=ifExistsFunc, duplicated_enabled=duplicated_enabled)
 
-    def insertDatas(self, datas: iter, r_idx=0, c_idx=0, align=Qt.AlignVCenter, ifExistsFunc=None, duplicated_enabled=False, set_first_row_as_current=False):
-        for data in datas:
-            self.insertData(data, r_idx=r_idx, c_idx=c_idx, align=align, ifExistsFunc=ifExistsFunc, duplicated_enabled=duplicated_enabled)
-            r_idx += 1
-        if set_first_row_as_current:
-            self.setCurrentIndex(self.model().index(0, 0))
-
     def addData(self, datas: iter, align=Qt.AlignVCenter, ifExistsFunc=None, duplicated_enabled=False):
         # self.setColumnCount(max(self.columnCount(), len(datas))) set the count of column dynamically
         self._setItem(args=datas, align=align, ifExistsFunc=ifExistsFunc, duplicated_enabled=duplicated_enabled)
