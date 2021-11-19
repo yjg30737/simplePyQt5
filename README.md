@@ -49,6 +49,14 @@ Add Ok, Cancel buttons to bottom right of certain QDialog. Attach to parent widg
 
 Basic dialog to insert the text. It contains QLineEdit, QPushButton. if user insert the text in QLineEdit, QPushButton will be enabled to click. If QLineEdit is empty, QPushButton will be disabled.
 
+* TableWidget
+
+Adding row items or column items much easier then usual QTableWidget. No need to make QTableWidgetItem. Header labels always be align in center.
+Both horizontal and vertical headers are not visible in default. But you can use `setHorizontalHeaderLabels(lst)` to add header labels(it will set column count by amount of header labels you given at the same time, align headers as center also.). same goes to vertical one.
+
+※ Maybe i'll make this as independent package. Don't give me wrong; I won't remove this module from this package.
+※ A lot of things that doesn't explain will be explained. Sorry 'bout that.
+
 * StyleApplier
 
 This module help you apply style, icon, tooltip over widgets. Style path and icon path are set to `style` and `icon` folder in your script folder by default. So if you want to use this module you have to make those two and put the css files and icon files inside them.
@@ -254,6 +262,23 @@ def __add(self):
 Result
 
 ![InsertDialog](./examples/insertDialogExample.png)
+
+* TableWidget
+
+Code(Horizontal)
+```python
+tableWidget = TableWidget()
+tableWidget.setHorizontalHeaderLabels(['Name', 'Sex', 'Age']) # Add labels. the method overrides the setHorizontalHeaderLabels of QTableWidget.
+tableWidget.addData(['a', 'b', 'c'], align=Qt.AlignCenter) # Add data like this. 'a', 'b', 'c' will be added as QTableWidgetItem. One row also will be added. You can give an align option.
+```
+
+Code(Vertical)
+```python
+tableWidget = TableWidget()
+tableWidget.setVerticalHeaderLabels(['Name', 'Sex', 'Age'])
+tableWidget.setColumnCount(3) # You have to set column count unlike the horizontal one. Because addData do add row but not add column.
+tableWidget.addData(['a', 'b', 'c'], align=Qt.AlignCenter)
+```
 
 * Other
 
