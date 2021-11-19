@@ -20,20 +20,20 @@ class TableWidget(QTableWidget):
         self.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
     def setHorizontalHeaderLabels(self, lst):
-        super().setHorizontalHeaderLabels(lst)
         self.horizontalHeader().setVisible(True)
         self.__horizontal_header = lst
         self.setColumnCount(len(lst))
+        super().setHorizontalHeaderLabels(lst)
         self.horizontalHeader().setDefaultAlignment(Qt.AlignCenter)
 
     def setCurIndex(self, r_idx, c_idx):
         self.setCurrentIndex(self.model().index(r_idx, c_idx))
 
     def setVerticalHeaderLabels(self, lst, align=Qt.AlignCenter):
-        super().setVerticalHeaderLabels(lst)
         self.verticalHeader().setVisible(True)
         self.__vertical_header = lst
         self.setRowCount(len(lst))
+        super().setVerticalHeaderLabels(lst)
         self.verticalHeader().setDefaultAlignment(Qt.AlignCenter)
 
     def clearRows(self):
