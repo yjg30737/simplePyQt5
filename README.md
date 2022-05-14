@@ -66,10 +66,7 @@ This module help you apply style, icon, tooltip over widgets. Style path and ico
 You can change those two paths, though.
 
 ## Setup
-```
-$ pip install pyqt5 # if pyqt5 is not installed in your package library
-$ pip install git+https://github.com/yjg30737/simplePyQt5.git
-```
+`python -m pip install simplePyQt5`
 
 ## Usage
 * HorizontalWidget
