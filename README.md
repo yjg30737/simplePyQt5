@@ -1,4 +1,5 @@
 # simplePyQt5
+This is the package i used when i was new at PyQt5.
 
 ## Table of Contents
 * [General Info](#general-info)
