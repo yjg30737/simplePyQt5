@@ -1,6 +1,8 @@
 # simplePyQt5
 This is the package i used when i was new at PyQt5.
 
+I uploaded this to pypi for the sake of preventing dependency error of some packages. 
+
 ## Table of Contents
 * [General Info](#general-info)
 * [Requirements](#requirements)
